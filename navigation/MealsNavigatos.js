@@ -14,7 +14,7 @@ import FavirotesScreen from "../screens/FavirotesMeal";
 import FiltersScreen from "../screens/FiltersScreen";
 import { Ionicons } from "@expo/vector-icons";
 
-const defaultNavOption =  {defaultNavigationOptions: {
+const defaultNavOption =  {
     headerStyle: {
        backgroundColor: Platform.OS === "android" ? Colors.primaryColor : ''
    },
@@ -25,7 +25,7 @@ const defaultNavOption =  {defaultNavigationOptions: {
        fontFamily: 'open-sans'
    },
    headerTintColor: Platform.OS === 'android' ? 'white' : Colors.accentColor
-}}
+}
 
 const MealsNavigator = createStackNavigator({
     Categories: CategoriesScreen,
@@ -33,12 +33,16 @@ const MealsNavigator = createStackNavigator({
         screen: CategoryMealScreen
     },
     MealDetails: MealDetailsScreen
-}, defaultNavOption);
+}, {
+    defaultNavigationOptions: defaultNavOption
+});
 
 const FavNavigstors = createStackNavigator({
     FavoriteMeals: FavirotesScreen,
     MealDetails: MealDetailsScreen
-}, defaultNavOption);
+}, {
+    defaultNavigationOptions: defaultNavOption
+});
 
 const screenTabs = {
     MealsNav: {screen: MealsNavigator, navigationOptions: {
@@ -77,7 +81,9 @@ const MealsFavTabNavigator = Platform.OS === "android"
 
 const FilterNavigator = createStackNavigator({
     Filters: FiltersScreen
-}, defaultNavOption);
+}, {
+    defaultNavigationOptions: defaultNavOption
+});
 
 const MainNavigator = createDrawerNavigator({
     TabNav: {
