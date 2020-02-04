@@ -4,7 +4,7 @@ import { HeaderButtons, Item } from "react-navigation-header-buttons";
 
 import { CATEGORIES } from '../data/dummy-data';
 import CategoryGridTiles from '../components/CategoryGridTiles';
-import CustomeHeaderButton from "../components/HeaderButton";
+import CustomHeaderButton from "../components/HeaderButton";
 
 const CategoriesScreen = props => {
 
@@ -30,7 +30,7 @@ const CategoriesScreen = props => {
 CategoriesScreen.navigationOptions = (navData) => {
     return {
         headerTitle: 'Meals Category',
-        headerLeft: () => (<HeaderButtons HeaderButtonComponent={CustomeHeaderButton}>
+        headerLeft: () => (<HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
             <Item title="menu" iconName="ios-menu" onPress={() => {
                 navData.navigation.toggleDrawer()
             }} />
