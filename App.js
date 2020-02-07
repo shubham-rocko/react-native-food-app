@@ -3,8 +3,17 @@ import { StyleSheet, View, Button, FlatList, Text } from 'react-native';
 import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
 import { enableScreens } from "react-native-screens";
+import { createStore, combineReducers } from 'redux';
+import { Provider } from 'react-redux';
 
 import MealsNavigators from './navigation/MealsNavigatos';
+import MealsReducer from './store/reducers/meals';
+
+const reducer = combineReducers({
+  meals: MealsReducer
+});
+
+const store = createStore(reducer);
 
 enableScreens();
 
