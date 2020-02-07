@@ -10,7 +10,7 @@ import MealsNavigators from './navigation/MealsNavigatos';
 import MealsReducer from './store/reducers/meals';
 
 const reducer = combineReducers({
-  meals: MealsReducer
+  mealData: MealsReducer
 });
 
 const store = createStore(reducer);
