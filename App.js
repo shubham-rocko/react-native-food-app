@@ -34,7 +34,7 @@ export default function App() {
     />
   }
 
-  return (<MealsNavigators />);
+  return (<Provider store={store}><MealsNavigators /></Provider>);
 }
 
 const styles = StyleSheet.create({
