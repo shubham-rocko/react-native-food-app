@@ -59,7 +59,7 @@ const screenTabs = {
             return <Ionicons name="ios-star" size={25} color={tabInfo.tintColor} />
         },
         tabBarColor: Colors.accentColor,
-        tabBarLabel: Platform.OS === "android" ? <Text style={{fontFamily: 'open-sans-bold'}}>Meals</Text> : 'Meal'
+        tabBarLabel: Platform.OS === "android" ? <Text style={{fontFamily: 'open-sans-bold'}}>Favorite!</Text> : 'Meal'
     }}
 }
 
