@@ -7,7 +7,7 @@ import MealList from "../components/MealList";
 import CustomHeaderButton from "../components/HeaderButton";
 
 const FavirotesScreen = props => {
-    const favMeals = useSelector(state => state.mealData.meals);
+    const favMeals = useSelector(state => state.mealData.favoriteMeals);
 
     return <MealList listData={favMeals} navigation={props.navigation} />
 };
