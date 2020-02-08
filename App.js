@@ -3,8 +3,17 @@ import { StyleSheet, View, Button, FlatList, Text } from 'react-native';
 import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
 import { enableScreens } from "react-native-screens";
+import { createStore, combineReducers } from 'redux';
+import { Provider } from 'react-redux';
 
 import MealsNavigators from './navigation/MealsNavigatos';
+import MealsReducer from './store/reducers/meals';
+
+const reducer = combineReducers({
+  mealData: MealsReducer
+});
+
+const store = createStore(reducer);
 
 enableScreens();
 
@@ -25,7 +34,7 @@ export default function App() {
     />
   }
 
-  return (<MealsNavigators />);
+  return (<Provider store={store}><MealsNavigators /></Provider>);
 }
 
 const styles = StyleSheet.create({
